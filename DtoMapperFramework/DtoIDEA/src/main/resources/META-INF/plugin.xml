@@ -1,0 +1,47 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+  <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+  <id>ru.itis.DtoIDEA</id>
+
+  <!-- Public plugin name should be written in Title Case.
+       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+  <name>DtoIDEA</name>
+
+  <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+  <vendor email="support@yourcompany.com" url="https://www.yourcompany.com">YourCompany</vendor>
+
+  <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+       Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+       Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+  <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+  ]]></description>
+
+  <!-- Product and plugin compatibility requirements.
+       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <!-- Extension points defined by the plugin.
+       Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+  <extensions defaultExtensionNs="com.intellij">
+
+  </extensions>
+  <depends>com.intellij.modules.java</depends>
+
+  <actions>
+    <!--        <group id="SampleGroup" text="ShowDTO" description="ShowDTO">-->
+    <!--            <add-to-group group-id="EditorPopupMenu" anchor="last"/>-->
+    <!--            <action id="ShowDTOAction" class="ru.itis.ideamapper.ShowDTOAction"-->
+    <!--                    text="Show DTO" description="Show a DTO code snippet">-->
+    <!--                <add-to-group group-id="SampleGroup" anchor="last"/>-->
+    <!--            </action>-->
+    <!--        </group>-->
+    <action id="ru.itis.ideamapper.ShowDTOAction" class="ru.itis.dtoidea.ShowDTOAction" text="Show DTO" description="ShowDTO">
+
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+      <keyboard-shortcut first-keystroke="control 1" keymap="$default"/>
+    </action>
+  </actions>
+
+</idea-plugin>
